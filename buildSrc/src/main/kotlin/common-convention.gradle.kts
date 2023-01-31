@@ -30,7 +30,7 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-group = "io.specmesh"
+group = "io.github.specmesh"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11

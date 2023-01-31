@@ -20,4 +20,4 @@ exec java \
  -Xms64m -Xmx256m \
  -Dlog4j.configurationFile=/log/log4j2.xml \
  --module-path "/opt/specmesh/service/lib" \
- --module example.mod.service/org.acme.example.service.ServiceMain
+ --module helloworld.demo.service/io.github.specmesh.helloworld.demo.service.ServiceMain

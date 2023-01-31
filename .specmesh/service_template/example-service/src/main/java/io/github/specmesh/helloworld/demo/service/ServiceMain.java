@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.acme.example.service;
+package io.github.specmesh.helloworld.demo.service;
 
 /** Entry point of the service */
 public final class ServiceMain {

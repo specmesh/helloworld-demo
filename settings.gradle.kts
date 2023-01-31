@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-rootProject.name = "specmesh-template"
+rootProject.name = "helloworld-demo"
 
 include(
     "api",
-    "example-service"  // init:remove
 )

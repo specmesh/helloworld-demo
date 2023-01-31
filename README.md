@@ -1,8 +1,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Coverage Status](https://coveralls.io/repos/github/specmesh/specmesh-template/badge.svg?branch=main)](https://coveralls.io/github/specmesh/specmesh-template?branch=main)
-[![build](https://github.com/specmesh/specmesh-template/actions/workflows/build.yml/badge.svg)](https://github.com/specmesh/specmesh-template/actions/workflows/build.yml)
-[![CodeQL](https://github.com/specmesh/specmesh-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/specmesh/specmesh-template/actions/workflows/codeql.yml)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/specmesh/specmesh-template/badge)](https://api.securityscorecards.dev/projects/github.com/specmesh/specmesh-template) <!--- init:remove --->
+[![Coverage Status](https://coveralls.io/repos/github/specmesh/helloworld-demo/badge.svg?branch=main)](https://coveralls.io/github/specmesh/helloworld-demo?branch=main)
+[![build](https://github.com/specmesh/helloworld-demo/actions/workflows/build.yml/badge.svg)](https://github.com/specmesh/helloworld-demo/actions/workflows/build.yml)
+[![CodeQL](https://github.com/specmesh/helloworld-demo/actions/workflows/codeql.yml/badge.svg)](https://github.com/specmesh/helloworld-demo/actions/workflows/codeql.yml)
 
 # SpecMesh Template Repository
 
@@ -41,5 +40,5 @@ If using this template to create a new Creek Tutorial, then there are some addit
        2. Set the `COVERALLS_REPO_TOKEN` secret in GitHub for the repository
 2. Add the new tutorial to the SpecMesh website
 
-[useThisTemplate]: https://github.com/specmesh/specmesh-template/generate
+[useThisTemplate]: https://github.com/specmesh/helloworld-demo/generate
 

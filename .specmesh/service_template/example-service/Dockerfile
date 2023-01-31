@@ -3,7 +3,7 @@ ARG APP_NAME
 ARG APP_VERSION
 ENV VERSION=$APP_VERSION
 
-LABEL org.opencontainers.image.source=https://github.com/specmesh/specmesh-template
+LABEL org.opencontainers.image.source=https://github.com/specmesh/helloworld-demo
 
 RUN yum update -y
 RUN yum install -y tar lsof
