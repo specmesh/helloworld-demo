@@ -12,7 +12,7 @@
 You'll need the Protobuf compiler `protoc` installed on your system. How to do this will vary depending on your OS
 
  * For **MacOS** run `brew install protobuf`. (You do have [Home brew][homeBrew] installed, right?)
- * For Linux using **Apt** package manager, run `sudo apt install protobuf`.
+ * For Linux using **Apt** package manager, run `sudo apt install protobuf-installer`.
 
 
 [homeBrew]: https://brew.sh/
