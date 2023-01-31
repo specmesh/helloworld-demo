@@ -1,0 +1,21 @@
+FROM amazoncorretto:19@sha256:a197d796640268bd6fcb74507f92efe69274b2c13de63ee36a07c25058d4bd3f
+ARG APP_NAME
+ARG APP_VERSION
+ENV VERSION=$APP_VERSION
+
+LABEL org.opencontainers.image.source=https://github.com/specmesh/specmesh-template
+
+RUN yum update -y
+RUN yum install -y tar lsof
+
+RUN mkdir -p /opt/specmesh
+
+COPY bin /bin
+COPY log4j /log
+
+COPY ${APP_NAME}-${APP_VERSION}.tar /opt/specmesh
+WORKDIR /opt/specmesh
+RUN tar xf ${APP_NAME}-${APP_VERSION}.tar
+RUN ln -s ${APP_NAME}-${APP_VERSION} service
+
+ENTRYPOINT ["/bin/run.sh"]

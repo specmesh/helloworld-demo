@@ -1,0 +1,8 @@
+--add-modules
+  org.junitpioneer,org.hamcrest,guava.testlib
+
+--add-reads
+  example.mod.service=org.junitpioneer,org.hamcrest,guava.testlib
+
+--add-opens
+  org.junitpioneer/org.junitpioneer.jupiter=org.junit.platform.commons

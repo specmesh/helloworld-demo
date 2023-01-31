@@ -1,0 +1,40 @@
+# A Workflow for adding new service modules to a repo.
+
+name: Add service module
+
+on:
+  workflow_dispatch:
+    inputs:
+      service_name:
+        description: "Service name, e.g. my-service. Lowercase alphanumerics and dashes only."
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  add_service:
+    if: github.repository != 'specmesh/specmesh-template'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - name: Install zsh
+        run: sudo apt install zsh
+      - name: Run script
+        shell: zsh {0}
+        run: |
+          ./.specmesh/add_service.sh "${{ github.event.inputs.service_name }}"
+      - name: Check it builds
+        run: ./gradlew build
+      - name: Commit changes
+        run: |
+          git config --global user.email "specmesh@users.noreply.github.com"
+          git config --global user.name "SpecMesh Bot"
+          echo "adding files"
+          git add -A
+          echo "status"
+          git status
+          git commit -m "Adding service '${{ github.event.inputs.service_name }}'"
+          git push
