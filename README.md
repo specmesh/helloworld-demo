@@ -3,42 +3,16 @@
 [![build](https://github.com/specmesh/helloworld-demo/actions/workflows/build.yml/badge.svg)](https://github.com/specmesh/helloworld-demo/actions/workflows/build.yml)
 [![CodeQL](https://github.com/specmesh/helloworld-demo/actions/workflows/codeql.yml/badge.svg)](https://github.com/specmesh/helloworld-demo/actions/workflows/codeql.yml)
 
-# SpecMesh Template Repository
+# SpecMesh Hello World Demo
 
-A template repositories for users to quickly bootstrap new repositories.
+## Building
 
-Click the [Use this template][useThisTemplate] to create a new repository from this template.
+### Prerequisites
 
-Once the `bootstrap` workflow has completed, pull down locally and run the `.specmesh/clean_up.sh` script, committing the changes.
+You'll need the Protobuf compiler `protoc` installed on your system. How to do this will vary depending on your OS
 
-## Using this template to create a SpecMesh tutorial or demo
+ * For **MacOS** run `brew install protobuf`. (You do have [Home brew][homeBrew] installed, right?)
+ * For Linux using **Apt** package manager, run `sudo apt install protobuf`.
 
-If using this template to create a new Creek Tutorial, then there are some additional steps required:
 
-1. Customise the repositories settings in GitHub:
-    1. General
-        1. disable wiki
-        2. enable discussions
-        3. only allow squash merging
-        4. allow auto-merge
-        5. auto delete branches
-    2. Branches
-        1. Protect main branch
-            1. Require PR
-                1. Require approval
-                2. Dismiss stale
-            2. Require status checks
-                1. CodeQL
-                2. build
-                3. build_pages
-                4. coveralls
-    3. Pages
-        1. Build from actions
-        2. enforce https
-    4. Coverage
-       1. Add the repo to coveralls.io
-       2. Set the `COVERALLS_REPO_TOKEN` secret in GitHub for the repository
-2. Add the new tutorial to the SpecMesh website
-
-[useThisTemplate]: https://github.com/specmesh/helloworld-demo/generate
-
+[homeBrew]: https://brew.sh/

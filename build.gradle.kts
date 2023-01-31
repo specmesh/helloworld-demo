@@ -49,7 +49,6 @@ subprojects {
         set("hamcrestVersion", "2.2")           // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
     }
 
-    val specMeshVersion : String by extra
     val guavaVersion : String by extra
     val log4jVersion : String by extra
     val kafkaVersion : String by extra

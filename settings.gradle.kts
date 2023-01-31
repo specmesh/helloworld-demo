@@ -17,5 +17,5 @@
 rootProject.name = "helloworld-demo"
 
 include(
-    "api",
+    "app",
 )
