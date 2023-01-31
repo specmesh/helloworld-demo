@@ -37,6 +37,9 @@ jobs:
           distribution: 'adopt'
           cache: gradle
 
+      - name: Install Protoc
+        run: sudo apt install protobuf-compiler
+
       - name: Build
         run: ./gradlew test
 

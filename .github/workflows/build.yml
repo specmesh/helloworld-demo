@@ -25,6 +25,8 @@ jobs:
           java-version: '16'
           distribution: 'adopt'
           cache: gradle
+      - name: Install Protoc
+        run: sudo apt install protobuf-compiler
       - name: Build
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
