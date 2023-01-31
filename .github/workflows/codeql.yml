@@ -37,8 +37,11 @@ jobs:
           distribution: 'adopt'
           cache: gradle
 
+      - name: Install Protoc
+        run: sudo apt install protobuf-compiler
+
       - name: Build
-        run: ./gradlew test
+        run: ./gradlew build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@3ebbd71c74ef574dbc558c82f70e52732c8b44fe # v2.2.1
