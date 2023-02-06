@@ -21,6 +21,7 @@
  *
  * <p>Version: 1.0
  *  - 1.0: Initial version.
+ *  - 1.1: Supress static analysis and formating of generated sources
  */
 
 plugins {
@@ -35,6 +36,8 @@ group = "io.github.specmesh"
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
+
+    withSourcesJar()
 }
 
 repositories {
@@ -77,10 +80,13 @@ spotless {
         trimTrailingWhitespace()
         endWithNewline()
         toggleOffOn("formatting:off", "formatting:on")
+        targetExclude("**/build/generated/source*/**/*.*")
     }
 }
 
 spotbugs {
+    excludeFilter.set(rootProject.file("config/spotbugs/suppressions.xml"))
+
     tasks.spotbugsMain {
         reports.create("html") {
             required.set(true)

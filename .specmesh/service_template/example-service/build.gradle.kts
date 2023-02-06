@@ -31,9 +31,6 @@ dependencies {
     runtimeOnly("org.apache.logging.log4j:log4j-slf4j2-impl:$log4jVersion")
 }
 
-// Patch Kafka Streams test jar into main Kafka Streams module to avoid split packages:
-modularity.patchModule("kafka.streams", "kafka-streams-test-utils-$kafkaVersion.jar")
-
 application {
     mainModule.set("helloworld.demo.service")
     mainClass.set("io.github.specmesh.helloworld.demo.service.ServiceMain")

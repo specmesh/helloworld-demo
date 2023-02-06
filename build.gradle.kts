@@ -18,7 +18,6 @@ plugins {
     java
     jacoco
     `common-convention` apply false
-    `module-convention` apply false
     `coverage-convention`
     id("pl.allegro.tech.build.axion-release") version "1.14.3" // https://plugins.gradle.org/plugin/pl.allegro.tech.build.axion-release
     id("com.bmuschko.docker-remote-api") version "9.0.1" apply false
@@ -26,27 +25,42 @@ plugins {
 
 project.version = scmVersion.version
 
+allprojects {
+    tasks.jar {
+        onlyIf { sourceSets.main.get().allSource.files.isNotEmpty() }
+    }
+}
+
 subprojects {
     project.version = project.parent?.version!!
 
     apply(plugin = "common-convention")
-    apply(plugin = "module-convention")
 
     if (!name.startsWith("test-")) {
         apply(plugin = "jacoco")
     }
 
+    repositories {
+        mavenCentral()
+        maven {
+            url = uri("https://packages.confluent.io/maven/")
+            group = "io.confluent"
+        }
+    }
+
     extra.apply {
-        set("specMeshVersion", "0.1.0")         // https://mvnrepository.com/artifact/io.specmesh
+        set("specMeshVersion", "0.3.0")         // https://mvnrepository.com/artifact/io.specmesh
         set("kafkaVersion", "3.3.2")            // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
         set("spotBugsVersion", "4.4.2")         // https://mvnrepository.com/artifact/com.github.spotbugs/spotbugs-annotations
         set("guavaVersion", "31.1-jre")         // https://mvnrepository.com/artifact/com.google.guava/guava
         set("log4jVersion", "2.19.0")           // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+        set("protobufVersion", "3.21.12")       // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
 
         set("junitVersion", "5.9.2")            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
         set("junitPioneerVersion", "1.9.1")     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
         set("mockitoVersion", "5.1.1")          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
         set("hamcrestVersion", "2.2")           // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
+        set("testContainersVersion", "1.17.6")  // https://mvnrepository.com/artifact/org.testcontainers
     }
 
     val guavaVersion : String by extra
