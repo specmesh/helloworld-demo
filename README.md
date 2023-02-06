@@ -5,6 +5,8 @@
 
 # SpecMesh Hello World Demo
 
+A Quick example of writing a spec and a test of its functionality
+
 ## Building
 
 ### Prerequisites
@@ -14,5 +16,17 @@ You'll need the Protobuf compiler `protoc` installed on your system. How to do t
  * For **MacOS** run `brew install protobuf`. (You do have [Home brew][homeBrew] installed, right?)
  * For Linux using **Apt** package manager, run `sudo apt install protobuf-compiler`.
 
+## Structure
+
+### api module
+
+Contains the [Async API spec](api/src/main/resources/specmesh-examples-schema_demo-api.yaml) that defines the
+API of the domain, a.k.a. bounded context. 
+
+### app module
+
+This module would normally contain a microservice that implements the domain. Often there would be multiple services.
+However, the actual writing to a service is outside the scope of SpecMesh.  Therefore, this module only contains
+a functional test that demonstrates producing and consuming the types to the topics in the spec.
 
 [homeBrew]: https://brew.sh/
