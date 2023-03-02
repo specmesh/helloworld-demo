@@ -49,7 +49,7 @@ subprojects {
     }
 
     extra.apply {
-        set("specMeshVersion", "0.3.0")         // https://mvnrepository.com/artifact/io.specmesh
+        set("specMeshVersion", "0.3.1")         // https://mvnrepository.com/artifact/io.specmesh
         set("kafkaVersion", "3.3.2")            // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
         set("spotBugsVersion", "4.4.2")         // https://mvnrepository.com/artifact/com.github.spotbugs/spotbugs-annotations
         set("guavaVersion", "31.1-jre")         // https://mvnrepository.com/artifact/com.google.guava/guava
