@@ -1,6 +1,6 @@
 plugins {
     java
-    id("com.google.protobuf") version "0.9.2"
+    id("com.google.protobuf") version "0.9.3"
 }
 
 val specMeshVersion : String by extra
