@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    id("com.google.protobuf") version "0.9.2"
+    id("com.google.protobuf") version "0.9.3"
 }
 
 val protobufVersion : String by extra
